@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <div><a routerLink="/">LOGO</a></div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+      <li><a routerLink="/myteam">My Team</a></li>
+      <li><a routerLink="/myrival">The Rival</a>
+    </ul>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <button routerLink="/shopping" mat-icon-button>
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </div>
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.gt-xs>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>pets</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <a class="mat-alink" routerLink="/myteam">
+          <span>My Team</span>
+        </a>
+      </button>
+      <button mat-menu-item>
+        <a class="mat-alink" routerLink="/myrival">
+          <span>The rival</span>
+        </a>
+      </button>
+    </mat-menu>
+
+    <button routerLink="/shopping" mat-icon-button>
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
