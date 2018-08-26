@@ -16,7 +16,7 @@ export class InfoTeamsComponent implements OnInit {
   infoTeamForm: FormGroup;
   body: any;
   tagClan: string;
-  itsLoad: boolean
+  itsLoad: boolean;
   constructor(private clansService: ClansService) {
     this.itsLoad = false;
   }
@@ -31,8 +31,6 @@ export class InfoTeamsComponent implements OnInit {
     this.clansService.getClans(this.infoTeamForm.value).subscribe(
       response => {
           this.body = response.body;
-          console.log(this.body);
-          console.log(this.body.items[0].tag);
           this.tagClan = this.body.items[0].tag;
           this.itsLoad = true;
         },

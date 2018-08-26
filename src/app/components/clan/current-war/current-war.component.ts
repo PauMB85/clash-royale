@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-current-war',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentWarComponent implements OnInit {
 
+  @Input() tagClan: string;
   constructor() { }
 
   ngOnInit() {

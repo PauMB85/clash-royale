@@ -19,7 +19,7 @@ export class ClansService {
     return this.http.get(this.url, {params: params, headers: this.header, observe: 'response'});
   }
 
-  getAClan(tagClan) {
+  getOverviewClan(tagClan) {
     return this.http.get(this.url + tagClan, {headers: this.header, observe: 'response'});
   }
 

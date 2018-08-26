@@ -22,6 +22,7 @@ import { OverviewComponent } from './components/clan/overview/overview.component
 import { MembersComponent } from './components/clan/members/members.component';
 import { WarLogComponent } from './components/clan/war-log/war-log.component';
 import { CurrentWarComponent } from './components/clan/current-war/current-war.component';
+import { EncodingUriPipe } from './pipes/encoding-uri.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CurrentWarComponent } from './components/clan/current-war/current-war.c
     OverviewComponent,
     MembersComponent,
     WarLogComponent,
-    CurrentWarComponent
+    CurrentWarComponent,
+    EncodingUriPipe
   ],
   imports: [
     BrowserModule,
