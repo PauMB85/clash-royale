@@ -18,7 +18,7 @@ export class WarLogComponent implements OnInit {
   constructor(private clansService: ClansService) {}
 
   ngOnInit() {
-    this.limit = '10';
+    this.limit = '100';
     this.getWarLog();
   }
 
