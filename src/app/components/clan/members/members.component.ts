@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ClansService} from '../../../service/clans/clans.service';
 import {Observable} from 'rxjs';
 import {AppError} from '../../../commons/errors/app-error';
+import {HttpParams} from '@angular/common/http';
 
 @Component({
   selector: 'app-members',
@@ -12,9 +13,10 @@ export class MembersComponent implements OnInit {
 
   @Input() tagClan: string;
   body: any;
-  limit: number;
+  limit: string;
+  params: HttpParams;
   constructor(private clansService: ClansService) {
-    this.limit = 10;
+    this.limit = '10';
   }
 
   ngOnInit() {
@@ -22,6 +24,14 @@ export class MembersComponent implements OnInit {
   }
 
   private getMembers() {
+    this.params = new HttpParams().set('limit', this.limit);
+    this.clansService.getMembersClan(this.tagClan, this.params).subscribe(
+      response => {
+        this.body = response.body;
+        console.log(this.body);
+      },
+      error => this.handlerError(error)
+    );
   }
 
   private handlerError(err: Response) {

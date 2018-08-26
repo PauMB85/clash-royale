@@ -24,20 +24,21 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <div fxLayout="row" fxLayoutAlign="center center">
-    {{tagClan}}
-  </div>
   <div *ngIf="itsLoad" fxLayout="row" fxLayoutAlign="center center">
 
     <mat-tab-group>
       <mat-tab label="Overview">
-        <app-overview tagClan="{{tagClan | encodingUri}} "></app-overview>
+        <app-overview tagClan="{{tagClan | encodingUri}}"></app-overview>
       </mat-tab>
       <mat-tab label="Members">
-        <app-members tagClan="{{tagClan | encodingUri}} "></app-members>
+        <app-members tagClan="{{tagClan | encodingUri}}"></app-members>
       </mat-tab>
-      <mat-tab label="War Log"> Content 3 </mat-tab>
-      <mat-tab label="Current War"> Content 3 </mat-tab>
+      <mat-tab label="War Log">
+        <app-war-log tagClan="{{tagClan | encodingUri}}"></app-war-log>
+      </mat-tab>
+      <mat-tab label="Current War">
+        <app-current-war tagClan="{{tagClan | encodingUri}}"></app-current-war>
+      </mat-tab>
     </mat-tab-group>
 
   </div>
