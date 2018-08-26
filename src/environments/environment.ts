@@ -3,7 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  clash_royal: {
+    endpoint: 'https://api.clashroyale.com/',
+    version_1: 'v1/',
+    resources: {
+      clans: {
+        clans: 'clans/',
+        members: '/members',
+        war_log: '/warlog',
+        current_war: '/currentwar'
+      },
+      players: {
+        players: 'players/',
+        upcoming_chests: '/upcomingchests',
+        battle_log: '/battlelog'
+      }
+    }
+  },
+  access_token: 'Bearer myToken'
 };
 
 /*
